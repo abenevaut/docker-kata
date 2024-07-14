@@ -1,26 +1,55 @@
 # Hello, World!
 
-This is a simple hello world program written in C.
+This exercise is designed to introduce the use of binary software though Docker.
+
+## Subject
+
+The `main.c` file is a simple "hello world" program written in C.
 The program prints the string "Hello, World!" to the standard output.
 
-- https://www.programiz.com/c-programming/examples/print-sentence
+- [source and more details about the code](https://www.programiz.com/c-programming/examples/print-sentence)
 
+Compiling a C program requires a compiler, such as [GCC](https://gcc.gnu.org/) or [CL](https://learn.microsoft.com/en-us/cpp/build/reference/compiler-command-line-syntax?view=msvc-170), to generate an executable file that can be run on the host machine.
+
+Compilers are generally different from one operating system to another, and compiled executables too.
+The generated executable may not work on other machines due to differences in the operating system or library dependencies.
+
+On Linux, the GCC compiler is commonly used to compile C programs.
+```shell
+gcc -o hello main.c
+```
+
+On Windows, the CL compiler is commonly used to compile C programs.
+```shell
+cl /Fe:hello.exe main.c
+```
+
+Docker provides a way to create isolated environments that can be used to compile software the same way on different machines.
+
+## Exercise
+
+Here we go, you have to compile the "hello world" program with a Docker container.
+
+I encourage you to use the GCC image from Docker Hub.
+- [GCC image](https://hub.docker.com/_/gcc)
 
 <details>
   <summary>Solution</summary>
+
+This command executes a Docker container to compile a C program statically using GCC within an isolated environment.
 
 ```shell
 docker run --rm -v $(shell pwd):/usr/src/myapp -w /usr/src/myapp gcc:latest gcc -o hello /usr/src/myapp/main.c -static
 ```
 
-This command executes a Docker container to compile a C program statically using GCC within an isolated environment. Here's a breakdown:
+Here's a breakdown:
 
 - `docker run`: Runs a command in a new container.
 - `--rm`: Automatically removes the container when it exits. This cleans up any resources used by the container.
-- `-v $(shell pwd):/usr/src/myapp`: Mounts the current directory ($(shell pwd)) on the host to /usr/src/myapp inside the container. This allows the container to access the host's file system, specifically the directory where the main.c file resides.
-- `-w /usr/src/myapp`: Sets the working directory inside the container to /usr/src/myapp. This is where the command will be executed.
-- `gcc:latest`: Specifies the Docker image to use, in this case, the latest version of the GCC image from Docker Hub. This image has GCC installed and is used to compile C programs.
-- `gcc -o hello /usr/src/myapp/main.c -static`: The command executed inside the container. It compiles main.c into an executable named hello using static linking. Static linking includes all the necessary library code within the executable, making it larger but self-contained.
+- `-v $(shell pwd):/usr/src/myapp`: Mounts the current directory (``$(shell pwd)`` on Windows, `$PWD` on Linux) on the host to /usr/src/myapp inside the container. This allows the container to access the host's file system, specifically the directory where the ``main.c`` file resides.
+- `-w /usr/src/myapp`: Sets the working directory inside the container to ``/usr/src/myapp``. This is where the command will be executed.
+- `gcc:latest`: Specifies the Docker image to use, in this case, the latest version of the GCC image from Docker Hub.
+- `gcc -o hello /usr/src/myapp/main.c`: The command executed inside the container. It compiles ``main.c`` into an executable named ``hello`` using dynamic linking.
 
-Overall, this command compiles a C program named main.c into a statically linked executable called hello using the GCC compiler within a Docker container, ensuring a consistent compilation environment.
+Overall, this command compiles a C program named ``main.c`` into a dynamic linked executable called ``hello`` using the GCC compiler within a Docker container, ensuring a consistent compilation environment.
 </details>
