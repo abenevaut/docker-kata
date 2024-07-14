@@ -1,4 +1,4 @@
-# Hello, World!
+﻿# Hello, World!
 
 This exercise is designed to introduce the use of binary software though Docker.
 
@@ -36,10 +36,10 @@ I encourage you to use the GCC image from Docker Hub.
 <details>
   <summary>Solution</summary>
 
-This command executes a Docker container to compile a C program statically using GCC within an isolated environment.
+This command executes a Docker container to compile a C program dynamically using GCC within an isolated environment.
 
 ```shell
-docker run --rm -v $(shell pwd):/usr/src/myapp -w /usr/src/myapp gcc:latest gcc -o hello /usr/src/myapp/main.c -static
+docker run --rm -v $(shell pwd):/usr/src/myapp -w /usr/src/myapp gcc:latest gcc -o hello /usr/src/myapp/main.c
 ```
 
 Here's a breakdown:
@@ -52,4 +52,6 @@ Here's a breakdown:
 - `gcc -o hello /usr/src/myapp/main.c`: The command executed inside the container. It compiles ``main.c`` into an executable named ``hello`` using dynamic linking.
 
 Overall, this command compiles a C program named ``main.c`` into a dynamic linked executable called ``hello`` using the GCC compiler within a Docker container, ensuring a consistent compilation environment.
+
+💯 Congratulations! You have compiled a C program using Docker 🎉
 </details>
