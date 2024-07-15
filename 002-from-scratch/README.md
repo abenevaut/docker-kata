@@ -81,5 +81,5 @@ docker run --rm hello
 
 In summary, this command starts a new container from the hello image, runs the default command specified in the Dockerfile (which, based on the context, would execute the "hello world" program), and then removes the container once the program completes and the container exits. This is a clean and efficient way to run short-lived processes in Docker.
 
-💯 Congratulations! You've successfully displaied "Hello, World!" using a statically compiled C program within a Docker container 🎉
+💯 Congratulations! You've successfully displayed "Hello, World!" using a statically compiled C program within a Docker container 🎉
 </details>
