@@ -17,7 +17,7 @@ Get started with Docker through exercises.
 
 ℹ️ all exercises are running on Windows and Visual Studio 2022 but nothing is specific to this environment.
 
-## Excersices
+## Exercises
 
 Each directory contains an exercise to do.
 - readme.md contains the subject
