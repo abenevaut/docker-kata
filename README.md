@@ -12,12 +12,12 @@ Get started with Docker through exercises.
 
 ## Prerequisite
 
-- you must have Docker installed on your machine
+- you must have [Docker desktop](https://docs.docker.com/desktop/) installed on your machine
 - we will be working with Linux containers, a basic understanding of an OS may be necessary
 
 ℹ️ all exercises are running on Windows and Visual Studio 2022 but nothing is specific to this environment.
 
-## Excersices
+## Exercises
 
 Each directory contains an exercise to do.
 - readme.md contains the subject
