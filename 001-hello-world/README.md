@@ -38,11 +38,15 @@ I encourage you to use the GCC image from Docker Hub.
 
 This command executes a Docker container to compile a C program dynamically using GCC within an isolated environment.
 
+> Take careful note of the part of the sentence "within an isolated environment".
+> GCC will be executed in a container, and the compiled binary will be available on the host machine.
+> To get this binary, you will have to mount a directory to the container.
+
 ```shell
 docker run --rm -v $(shell pwd):/usr/src/myapp -w /usr/src/myapp gcc:latest gcc -o hello /usr/src/myapp/main.c
 ```
 
-Here's a breakdown:
+Here's a breakdown of the command:
 
 - `docker run`: Runs a command in a new container.
 - `--rm`: Automatically removes the container when it exits. This cleans up any resources used by the container.
