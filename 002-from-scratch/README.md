@@ -63,12 +63,11 @@ docker build . -t hello --no-cache
 ```
 
 - `docker build`: This is the Docker command used to build an image from a Dockerfile and a "context". The Dockerfile contains all the commands a user could call on the command line to assemble an image.
-- `.`: This specifies the build context to the Docker daemon. In this case, . refers to the current directory. The build context includes the Dockerfile, any files, and folders in the current directory. These files can be added to the image during the build process.
+- `.`: This specifies the build context to the Docker daemon. In this case, refers to the current directory. The build context includes the Dockerfile, any files, and folders in the current directory. These files can be added to the image during the build process.
 - `-t hello`: The -t flag assigns a tag to the image, in this case, hello. Tags are used to identify different versions or variants of an image. Without a tag, it would be harder to manage different images and their versions. The hello tag here effectively names the image.
 - `--no-cache`: This option tells Docker to build the image without using any cache from previous builds. This can be useful when you want to ensure that you're getting the freshest versions of everything that your Dockerfile instructs to download or add. Without this option, Docker might use cached intermediate images from previous builds, which could lead to outdated components being included in your image.
 
 In summary, this command is used to build a fresh Docker image named hello from the Dockerfile in the current directory, ensuring that no cache is used during the build process. This is particularly useful for ensuring that all the steps in the Dockerfile are executed with the most up-to-date data and instructions, especially when pulling from external sources or when making frequent changes to the Dockerfile.
-
 
 This command runs a Docker container using the `hello` image.
 ```shell
@@ -81,5 +80,5 @@ docker run --rm hello
 
 In summary, this command starts a new container from the hello image, runs the default command specified in the Dockerfile (which, based on the context, would execute the "hello world" program), and then removes the container once the program completes and the container exits. This is a clean and efficient way to run short-lived processes in Docker.
 
-💯 Congratulations! You've successfully displaied "Hello, World!" using a statically compiled C program within a Docker container 🎉
+💯 Congratulations! You've successfully displayed "Hello, World!" using a statically compiled C program within a Docker container 🎉
 </details>
