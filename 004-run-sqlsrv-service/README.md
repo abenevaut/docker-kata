@@ -20,6 +20,7 @@ Inspirate from the [docker run doc.](https://docs.docker.com/reference/cli/docke
 
 With a volume
 ```shell
+docker volume create sqlsrv-data
 docker run -d -p 1433:1433 --name sqlsrv -v sqlsrv-data:/var/opt/mssql mcr.microsoft.com/azure-sql-edge
 ```
 
@@ -27,5 +28,4 @@ With a mounted directory from host
 ```shell
 docker run -d -p 1433:1433 --name sqlsrv -v /path/to/host/directory:/var/opt/mssql -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=yourStrong(!)Password' mcr.microsoft.com/azure-sql-edge
 ```
-
 </details>
