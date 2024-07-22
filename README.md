@@ -24,6 +24,11 @@ Each directory contains an exercise to do.
 - readme.md contains the solution
 - the other files will illustrate the build context of a binary or service that will have to run in a container
 
+## Please help us to improve it
+
+This Kata is mostly generated with GitHub copilot and is a work in progress.
+If you have any suggestions or spot error(s), please create an issue or a pull request.
+
 ## See also
 
 - https://learn.microsoft.com/en-us/visualstudio/containers/?view=vs-2022
