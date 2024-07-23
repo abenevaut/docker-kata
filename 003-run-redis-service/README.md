@@ -1,4 +1,4 @@
-# FROM scratch
+# Are you Redis ?
 
 This exercise is designed to create and use our first Docker service with [the redis](https://hub.docker.com/_/redis/) image.
 

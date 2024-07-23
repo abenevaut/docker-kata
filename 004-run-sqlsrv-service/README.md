@@ -1,4 +1,4 @@
-# FROM scratch
+# SQL Server Service
 
 This exercise is designed to mount a volume to persist data in a Docker service with [the azure sql edge](https://hub.docker.com/r/microsoft/azure-sql-edge) image. 
 
