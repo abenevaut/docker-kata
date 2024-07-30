@@ -1,4 +1,4 @@
-# SQL Server Service
+**# SQL Server Service
 
 This exercise is designed to mount a volume to persist data from a Docker service in local host with [the azure sql edge](https://hub.docker.com/r/microsoft/azure-sql-edge) image. 
 
@@ -56,4 +56,4 @@ The command is used to run a Docker container with the Azure SQL Edge image, per
 - `-e 'ACCEPT_EULA=1'`: Sets the environment variable `ACCEPT_EULA` to 1, which is required to accept the end-user license agreement.
 - `-e 'MSSQL_SA_PASSWORD=yourStrong(!)Password'`: Sets the environment variable `MSSQL_SA_PASSWORD` to `yourStrong(!)Password`, which is required to set the SA (system administrator) password for the SQL Server.
 - `mcr.microsoft.com/azure-sql-edge`: Specifies the Docker image to use for the container, which is the Azure SQL Edge image from Microsoft's container registry.
-</details>
+</details>**
