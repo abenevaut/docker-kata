@@ -1,16 +1,18 @@
 # Docker starter kit
 
-## How works Docker
+## How Docker works
 
 ![](./docker-development-cycle.svg)
 
-- **Dockerfile**: Un fichier Dockerfile est un script qui contient une série d'instructions pour construire une image Docker. Les instructions incluent des commandes pour copier des fichiers,
-installer des logiciels, définir des variables d'environnement, etc. Les fichiers Dockerfile sont utilisés pour automatiser le processus de construction d'images Docker.
+- **Dockerfile**: A Dockerfile is a script that contains a series of instructions to build a Docker image.
+The instructions include commands to copy files, install software, set environment variables, etc.
+Dockerfiles are used to automate the process of building Docker images.
 
-- **Image Docker**: Une image Docker est un modèle immuable qui contient le code source, les bibliothèques, les dépendances, les outils et autres fichiers nécessaires pour exécuter une application.
-Les images servent de point de départ pour créer des conteneurs. Pour décrire une image, on utilise un fichier Dockerfile qui spécifie comment construire l'image.
-L'héritage est possible, une image peut être basée sur une autre image, de cette façon, on peut profiter des logiciels et configurations de l'image parente.
-Par exemple, pour une image basée sur Ubuntu :
+- **Docker Image**: A Docker image is an immutable template that contains the source code, libraries, dependencies, tools, and other files needed to run an application.
+Images serve as a starting point for creating containers. To describe an image, a Dockerfile is used to specify how to build the image.
+Inheritance is possible; an image can be based on another image, allowing the use of the software and configurations of the parent image.
+ 
+For example, for an image based on Ubuntu:
 
 ```Dockerfile
 FROM ubuntu:20.04
@@ -18,106 +20,100 @@ RUN apt-get update && apt-get install -y nginx
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-- [**Docker Hub**](https://hub.docker.com) : Docker Hub est un service de registre qui permet de trouver, partager et gérer des images Docker. Les utilisateurs peuvent pousser leurs images sur Docker Hub pour les 
-rendre accessibles à d'autres, ou télécharger des images publiques pour leur propre utilisation. Docker Hub contient une vaste bibliothèque d'images officielles et communautaires.
-On peut reconnaitre les [images officielles](https://hub.docker.com/search?image_filter=official) par leur nom d'utilisateur `library`, par exemple `library/ubuntu` ou encore par le "_" dans l'url d'une image, par exemple `/_/ubuntu`.
+- [**Docker Hub**](https://hub.docker.com): Docker Hub is a registry service that allows finding, sharing, and managing Docker images. Users can push their images to Docker Hub to make them accessible to others or download public images for their own use. Docker Hub contains a vast library of official and community images. [Official images](https://hub.docker.com/search?image_filter=official) can be recognized by their username `library`, for example, `library/ubuntu`, or by the "_" in the image URL, for example, `/_/ubuntu`.
 
-> Attention : Ne vous laissez pas berner par des images communautaires qui pourraient contenir des logiciels malveillants.
+> Warning: Do not be misled by community images that may contain malware.
 
-- [**GitHub**](https://docs.github.com/fr/packages/working-with-a-github-packages-registry/working-with-the-docker-registry) & [**Azure**](https://azure.microsoft.com/fr-fr/products/container-registry/) : disposent de leur propre registre d'images Docker. 
- 
-- **Conteneur** : Un conteneur est une instance exécutable d'une image Docker. Il encapsule l'application et son environnement d'exécution. Plusieurs conteneurs peuvent être lancés à partir de la 
-même image, fonctionnant isolément les uns des autres. Les conteneurs partagent le même noyau de système d'exploitation, mais peuvent être limités en termes de CPU, mémoire, et autres ressources.
-En d'autres termes, les conteneurs sont des machines virtuelles.
+- [**GitHub**](https://docs.github.com/fr/packages/working-with-a-github-packages-registry/working-with-the-docker-registry) & [**Azure**](https://azure.microsoft.com/fr-fr/products/container-registry/): have their own Docker image registries.
 
-- **Volume** : Un volume est un mécanisme pour persister et partager des données entre conteneurs et le système hôte. Contrairement aux données dans les couches d'une image Docker, les données dans 
-un volume ne sont pas supprimées lorsque le conteneur est détruit. Les volumes sont utiles pour la sauvegarde, la restauration et le partage de données.  
+- **Container**: A container is an executable instance of a Docker image. It encapsulates the application and its runtime environment. Multiple containers can be launched from the same image, running independently of each other. Containers share the same operating system kernel but can be limited in terms of CPU, memory, and other resources. In other words, containers are like virtual machines.
 
-- **Network** : Docker utilise des réseaux pour permettre la communication entre les conteneurs. Par défaut, Docker fournit plusieurs réseaux (bridge, host, none, etc.), mais les utilisateurs peuvent
-également créer leurs propres réseaux. Cela permet de contrôler la manière dont les conteneurs communiquent entre eux et avec l'extérieur.
+- **Volume**: A volume is a mechanism to persist and share data between containers and the host system. Unlike data in the layers of a Docker image, data in a volume is not deleted when the container is destroyed. Volumes are useful for backup, restore, and data sharing.
 
-Exemple de création et gestion d'un conteneur, volume, et réseau :
+- **Network**: Docker uses networks to enable communication between containers. By default, Docker provides several networks (bridge, host, none, etc.), but users can also create their own networks. This allows controlling how containers communicate with each other and with the outside world.
+
+Example of creating and managing a container, volume, and network:
 
 ```shell
-# Télécharger une image Ubuntu depuis Docker Hub
+# Pull an Ubuntu image
 docker pull ubuntu:20.04
 
-# Créer et démarrer un conteneur à partir de l'image Ubuntu
-docker run -d --name mon-ubuntu ubuntu:20.04
+# Create and start a container from the Ubuntu image
+docker run -d --name my-ubuntu ubuntu:20.04
 
-# Créer un volume pour persister des données
-docker volume create mon-volume
+# Create a volume to persist data
+docker volume create my-volume
 
-# Attacher le volume au conteneur pour persister des données
-docker run -d --name mon-ubuntu-avec-volume -v mon-volume:/data ubuntu:20.04
+# Attach the volume to the container to persist data
+docker run -d --name my-ubuntu-with-volume -v my-volume:/data ubuntu:20.04
 
-# Créer un réseau personnalisé
-docker network create mon-reseau
+# Create a custom network
+docker network create my-network
 
-# Connecter le conteneur au réseau personnalisé
-docker network connect mon-reseau mon-ubuntu
+# Connect the container to the custom network
+docker network connect my-network my-ubuntu
 ```
 
-## Docker essential Sheet Cheat
+## Docker Essential Cheat Sheet
 
 ### Manage images
 
 ```shell
-# Télécharger une image depuis Docker Hub
+# Download an image from Docker Hub
 docker pull ubuntu:20.04
 
-# Builder une image à partir d'un Dockerfile
-docker build -t mon-image .
+# Build an image from a Dockerfile
+docker build -t my-image .
 
-# Lister les images téléchargées
+# List downloaded images
 docker images
 
-# Supprimer une image
+# Remove an image
 docker images rm ubuntu:20.04
 
-# Supprimer toutes les images non utilisées
+# Remove all unused images
 docker image prune
 ```
 
 ### Manage containers
 
 ```shell
-# Créer un conteneur à partir d'une image
-docker run --name mon-conteneur ubuntu:20.04
+# Create a container from an image
+docker run --name my-container ubuntu:20.04
 
-# Créer et démarrer un conteneur qui se supprimera à la fin de son execution
-docker run --rm --name mon-conteneur ubuntu:20.04
+# Create and start a container that will remove itself after execution
+docker run --rm --name my-container ubuntu:20.04
 
-# Créer et démarrer un conteneur en mode interactif
-docker run -it --name mon-conteneur ubuntu:20.04
+# Create and start a container in interactive mode
+docker run -it --name my-container ubuntu:20.04
 
-# Créer et démarrer un conteneur en mode interactif qui se supprimera à la fin de son execution
-docker run --rm -it --name mon-conteneur ubuntu:20.04
+# Create and start a container in interactive mode that will remove itself after execution
+docker run --rm -it --name my-container ubuntu:20.04
 
-# Créer et démarrer un conteneur en mode détaché
-docker run -d --name mon-conteneur ubuntu:20.04
+# Create and start a container in detached mode
+docker run -d --name my-container ubuntu:20.04
 
-# Exécuter une commande dans un conteneur
-docker exec mon-conteneur ls
+# Execute a command in a container
+docker exec my-container ls
 
-# Exécuter une commande en mode interactif dans un conteneur
-docker exec -it mon-conteneur bash
+# Execute a command in interactive mode in a container
+docker exec -it my-container bash
 
-# Lister les conteneurs en cours d'exécution
+# List running containers
 docker ps
 
-# Lister tous les conteneurs
+# List all containers
 docker ps -a
 
-# Arrêter un conteneur
-docker stop mon-conteneur
+# Stop a container
+docker stop my-container
 
-# Démarrer un conteneur
-docker start mon-conteneur
+# Start a container
+docker start my-container
 
-# Supprimer un conteneur
-docker rm mon-conteneur
+# Remove a container
+docker rm my-container
 
-# Supprimer tous les conteneurs non utilisés
+# Remove all unused containers
 docker container prune
 ```
