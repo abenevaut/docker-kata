@@ -56,4 +56,4 @@ docker network connect my-network my-ubuntu
 
 ## Docker Essential Cheat Sheet
 
-{% gist 051d8fd214476eceab54d8f4b46da700 %}
+[Read the Gist](https://gist.github.com/abenevaut/051d8fd214476eceab54d8f4b46da700)
