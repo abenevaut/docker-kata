@@ -1,4 +1,4 @@
-# SQL Server Service
+# Host a node app with node image
 
 This exercise is designed to create our first Dockerfile and then our first image to run a node app as a service accessible from the host with [node](https://hub.docker.com/_/node) image.
 
