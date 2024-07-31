@@ -59,7 +59,7 @@ docker network create mon-reseau
 docker network connect mon-reseau mon-ubuntu
 ```
 
-## Docker essential Sheet Cheat
+## Docker Essential Cheat Sheet
 
 ### Manage images
 
