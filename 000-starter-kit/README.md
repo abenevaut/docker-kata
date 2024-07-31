@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y nginx
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-- [**Docker Hub**](https://hub.docker.com): Docker Hub is a registry service that allows finding, sharing, and managing Docker images. Users can push their images to Docker Hub to make them accessible to others or download public images for their own use. Docker Hub contains a vast library of official and community images. Official images can be recognized by their username `library`, for example, `library/ubuntu`, or by the "_" in the image URL, for example, `/_/ubuntu`.
+- [**Docker Hub**](https://hub.docker.com): Docker Hub is a registry service that allows finding, sharing, and managing Docker images. Users can push their images to Docker Hub to make them accessible to others or download public images for their own use. Docker Hub contains a vast library of official and community images. [Official images](https://hub.docker.com/search?image_filter=official) can be recognized by their username `library`, for example, `library/ubuntu`, or by the "_" in the image URL, for example, `/_/ubuntu`.
 
 > Warning: Do not be misled by community images that may contain malware.
 
