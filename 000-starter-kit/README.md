@@ -24,7 +24,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 > Warning: Do not be misled by community images that may contain malware.
 
-- [**GitHub**](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-docker-registry): GitHub provides its own Docker image registry to manage Docker images. This registry can be used to store and distribute images, just like Docker Hub. GitHub's registry integrates with GitHub repositories, providing a seamless experience for managing Docker images alongside the source code.
+- [**GitHub**](https://docs.github.com/fr/packages/working-with-a-github-packages-registry/working-with-the-docker-registry) & [**Azure**](https://azure.microsoft.com/fr-fr/products/container-registry/): have their own Docker image registries.
 
 - **Container**: A container is an executable instance of a Docker image. It encapsulates the application and its runtime environment. Multiple containers can be launched from the same image, running independently of each other. Containers share the same operating system kernel but can be limited in terms of CPU, memory, and other resources. In other words, containers are like virtual machines.
 

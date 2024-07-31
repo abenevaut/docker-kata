@@ -1,6 +1,6 @@
 # Docker starter kit
 
-## How works Docker
+## How Docker works
 
 ![](./docker-development-cycle.svg)
 
