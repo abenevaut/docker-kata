@@ -1,0 +1,6 @@
+@_004_web_api_docker_composer_HostAddress = http://localhost:5019
+
+GET {{_004_web_api_docker_composer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
