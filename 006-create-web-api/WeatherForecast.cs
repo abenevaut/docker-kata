@@ -1,4 +1,4 @@
-namespace _003_web_api
+namespace _006_web_api
 {
     public class WeatherForecast
     {
