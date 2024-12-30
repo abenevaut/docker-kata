@@ -33,8 +33,8 @@ When you choose a base image
 - you can copy files from the host to the container with the `COPY` instruction.
 - you can set the user with the `USER` instruction.
 - you can use the `RUN` instruction to execute commands inside the container.
-- you can set the default command to run when the container starts with the `CMD` instruction.
 - you can expose ports with the `EXPOSE` instruction.
+- you can set the default command to run when the container starts with the `CMD` instruction.
 
 
 
@@ -49,7 +49,7 @@ The instructions define how the image is built, what dependencies are installed,
 to do some commands executions, you (probably) should be in the right directory.
 you can use the `WORKDIR` instruction to set the working directory for subsequent commands in the Dockerfile.
 
-If your not familiar with user management, on linux each user have a home directory.
+If you are not familiar with user management, on linux each user have a home directory.
 On node image, the default user is `node` and its home directory is `/home/node`.
 
 In our example, we will use an `app` directory in the `/home/node` directory as base directory for our app.
@@ -58,7 +58,7 @@ In our example, we will use an `app` directory in the `/home/node` directory as 
 WORKDIR /home/node/app
 ```
 
-Then we will able to copy projects file to the container with the `COPY` instruction.
+Then we will be able to copy projects file to the container with the `COPY` instruction.
 The `COPY` instruction copies files from the host to the container.
 It takes two arguments: the source path on the host and the destination path in the container.
 ```Dockerfile
@@ -86,17 +86,17 @@ COPY package*.json .
 
 RUN npm install --only=production
 
-CMD ["node", "/home/node/app/app.js"]
-
 EXPOSE 3000
+
+CMD ["node", "/home/node/app/app.js"]
 ```
 
 ```shell
-docker build . -t my-no-app:v1 --no-cache
+docker build . -t my-node-app --no-cache
 ```
 
 ```shell
-docker run --rm --init -p 3000:3000 my-no-app:v1
+docker run --rm --init -p 3000:3000 my-node-app
 ```
 
 visit [http://localhost:3000](http://localhost:3000) to see the app running.
