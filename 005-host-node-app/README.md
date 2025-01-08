@@ -4,13 +4,13 @@ This exercise is designed to create our first Dockerfile and then our first imag
 
 ## Subject
 
-we will use node image to run a node app.
+We will use node image to run a node app.
 
-let's ready the image description from the [node image doc.](https://hub.docker.com/_/node)
+Let's read the image description from the [node image doc.](https://hub.docker.com/_/node)
 
-we will inherit from the node image and copy the app.js file to the container and run it with node.
+We will inherit from the node image and copy the app.js file to the container and run it with node.
 
-to inherit from node image, we will use the FROM command in Dockerfile.
+To inherit from node image, we will use the FROM command in Dockerfile.
 It defines the starting point for the image build process.
     
 ```Dockerfile
@@ -23,10 +23,9 @@ The image has different tags like `node:20-slim`, `node:20-alpine`, `node:20-bus
 In this case, node:20-slim refers to the node image with version 20 and the slim variant.
 Tags help to identify specific versions of images and are useful for ensuring consistency and reproducibility in Docker builds.
 
-the variant `slim` is a smaller version of the image with fewer dependencies, making it more lightweight and suitable for production use.
+The variant `slim` is a smaller version of the image with fewer dependencies, making it more lightweight and suitable for production use.
 
-depending the environment and the dependencies needed, you can choose the appropriate tag for your Dockerfile.
-
+Depending the environment and the dependencies needed, you can choose the appropriate tag for your Dockerfile.
 
 When you choose a base image
 - you can set the working directory with the `WORKDIR` instruction.
@@ -36,18 +35,14 @@ When you choose a base image
 - you can set the default command to run when the container starts with the `CMD` instruction.
 - you can expose ports with the `EXPOSE` instruction.
 
-
-
-
-
-execution path of a Dockerfile?
+Execution path of a Dockerfile?
 
 The execution path of a Dockerfile is from top to bottom.
 Each instruction in the Dockerfile is executed in order, building upon the previous steps to create the final image.
 The instructions define how the image is built, what dependencies are installed, and how the container should run when started.
 
-to do some commands executions, you (probably) should be in the right directory.
-you can use the `WORKDIR` instruction to set the working directory for subsequent commands in the Dockerfile.
+To do some commands executions, you (probably) should be in the right directory.
+You can use the `WORKDIR` instruction to set the working directory for subsequent commands in the Dockerfile.
 
 If your not familiar with user management, on linux each user have a home directory.
 On node image, the default user is `node` and its home directory is `/home/node`.
@@ -65,13 +60,10 @@ It takes two arguments: the source path on the host and the destination path in 
 COPY ./<PATH TO FILE ON HOST> ./<PATH TO FILE IN CONTAINER>
 ```
 
-
-
-
 ## Exercise
 
-use `node:20-slim` image as base image for your Dockerfile.
-copy app.js package.json and package-lock.json to the container and run the app.js with node.
+Use `node:20-slim` image as base image for your Dockerfile.
+Copy app.js package.json and package-lock.json to the container and run the app.js with node.
 
 <details>
   <summary>Solution</summary>
@@ -99,6 +91,6 @@ docker build . -t my-no-app:v1 --no-cache
 docker run --rm --init -p 3000:3000 my-no-app:v1
 ```
 
-visit [http://localhost:3000](http://localhost:3000) to see the app running.
+Visit [http://localhost:3000](http://localhost:3000) to see the app running.
 
 </details>
