@@ -1,0 +1,12 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #
+    # Complete here to be able to run the app in the container
+    #
+
+  redis:
+    image: redis:alpine
