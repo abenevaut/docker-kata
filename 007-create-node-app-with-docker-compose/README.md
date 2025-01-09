@@ -153,10 +153,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8000:3000
+    environment:
+      - REDIS_HOST=redis
 
   redis:
     image: redis:alpine
-    hostname: app-redis
 ```
 
 Visit [http://localhost:8000](http://localhost:8000) to see the app running.
