@@ -70,7 +70,7 @@ In this directory, you will find an `app.js` file, a `package.json` file and a `
 This app is already working, you should `npm install` to install dependencies and `node app.js` to run the app.
 You can visit [http://localhost:3000](http://localhost:3000) to see the app running.
 
-Constitute a Dockerfile to build an image to run the node app.
+Constitute a Dockerfile to build an image to run the node app. A file `example.Dockerfile` is provided to help you.
 - Use `node:20-slim` image as base image for your Dockerfile
 - Copy `app.js`, `package.json` & `package-lock.json` to the image
 - Run the `app.js` with node

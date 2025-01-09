@@ -2,7 +2,7 @@
 
 ## How Docker works
 
-![](./docker-development-cycle.svg)
+![docker cycle de développement](./docker-development-cycle.svg)
 
 - **Dockerfile**: Un fichier Dockerfile est un script qui contient une série d'instructions pour construire une image Docker. Les instructions incluent des commandes pour copier des fichiers,
 installer des logiciels, définir des variables d'environnement, etc. Les fichiers Dockerfile sont utilisés pour automatiser le processus de construction d'images Docker.

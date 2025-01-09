@@ -29,13 +29,13 @@ gcc -o hello main.c -static
 ```
 
 Docker provides a way to create isolated environments for running applications, including compiling and running software.
-As one of this ways is to use the `FROM scratch` image, which is an empty image (whitout operating system) that allows you to build minimal Docker images "FROM scratch".
+As one of these ways is to use the `FROM scratch` image, which is an empty image (without operating system) that allows you to build minimal Docker images "FROM scratch".
 
 ## Exercise
 
 Here we go, you have to compile the "hello world" program statically, then build and run a Docker image with the compiled executable.
 
-The require Dockerfile is already provided, you just have to compile the program and build the Docker image.
+The required Dockerfile is already provided, you just have to compile the program and build the Docker image.
 
 - [docker build image doc.](https://docs.docker.com/reference/cli/docker/image/build/)
 - [docker run container doc.](https://docs.docker.com/reference/cli/docker/container/run/)

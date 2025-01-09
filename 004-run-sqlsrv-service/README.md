@@ -13,7 +13,7 @@ Pull and run the Azure sql edge image twice as a background service.
 - The first service should persist data in a docker volume and run service on port 1433.
 - The second service should persist data in a mounted directory from the host and run service on port 1434.
 
-Inspirate from the [docker run doc.](https://docs.docker.com/reference/cli/docker/container/run/), the [azure sql edge image doc.](https://hub.docker.com/r/microsoft/azure-sql-edge) and the [starter-kit](../000-starter-kit/README.md) if needed.
+Inspired from the [docker run doc.](https://docs.docker.com/reference/cli/docker/container/run/), the [azure sql edge image doc.](https://hub.docker.com/r/microsoft/azure-sql-edge) and the [starter-kit](../000-starter-kit/README.md) if needed.
 
 <details>
   <summary>Solution</summary>
