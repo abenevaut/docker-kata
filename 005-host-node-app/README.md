@@ -8,7 +8,7 @@ We will use node image to run a node app.
 
 Let's read the image description from the [node image doc.](https://hub.docker.com/_/node)
 
-We will inherit from the node image and copy the app.js file to the container and run it with node.
+We will inherit from the node image and copy the app.js file to our image and run it with node.
 
 To inherit from node image, we will use the FROM command in Dockerfile.
 It defines the starting point for the image build process.
@@ -25,13 +25,13 @@ Tags help to identify specific versions of images and are useful for ensuring co
 
 The variant `slim` is a smaller version of the image with fewer dependencies, making it more lightweight and suitable for production use.
 
-Depending the environment and the dependencies needed, you can choose the appropriate tag for your Dockerfile.
+Depending on the environment and the dependencies needed, you can choose the appropriate tag for your Dockerfile.
 
 When you choose a base image
 - you can set the working directory with the `WORKDIR` instruction.
-- you can copy files from the host to the container with the `COPY` instruction.
-- you can set the user with the `USER` instruction.
-- you can use the `RUN` instruction to execute commands inside the container.
+- you can copy files from the host to the image with the `COPY` instruction.
+- you can set the user who will be used for execute scripts, commands & servers with the `USER` instruction.
+- you can use the `RUN` instruction to execute commands during image build process.
 - you can expose ports with the `EXPOSE` instruction.
 - you can set the default command to run when the container starts with the `CMD` instruction.
 
@@ -53,17 +53,29 @@ In our example, we will use an `app` directory in the `/home/node` directory as 
 WORKDIR /home/node/app
 ```
 
-Then we will be able to copy projects file to the container with the `COPY` instruction.
-The `COPY` instruction copies files from the host to the container.
-It takes two arguments: the source path on the host and the destination path in the container.
+Then we will be able to copy projects file to the image with the `COPY` instruction.
+The `COPY` instruction copies files from the host to the image.
+It takes two arguments: the source path on the host and the destination path in the image.
 ```Dockerfile
-COPY ./<PATH TO FILE ON HOST> ./<PATH TO FILE IN CONTAINER>
+COPY ./<PATH TO FILE ON HOST> ./<PATH TO FILE IN IMAGE>
 ```
+
+Note that we generally copy sources in the image when we build an image for testing or production purposes.
+You will not be able to edit sources files and see the changes in the container without rebuilding the image.
+
 
 ## Exercise
 
-Use `node:20-slim` image as base image for your Dockerfile.
-Copy app.js package.json and package-lock.json to the container and run the app.js with node.
+In this directory, you will find an `app.js` file, a `package.json` file and a `package-lock.json` file.
+This app is already working, you should `npm install` to install dependencies and `node app.js` to run the app.
+You can visit [http://localhost:3000](http://localhost:3000) to see the app running.
+
+Constitute a Dockerfile to build an image to run the node app.
+- Use `node:20-slim` image as base image for your Dockerfile
+- Copy `app.js`, `package.json` & `package-lock.json` to the image
+- Run the `app.js` with node
+
+Finally, build the image and run a container with the image.
 
 <details>
   <summary>Solution</summary>
