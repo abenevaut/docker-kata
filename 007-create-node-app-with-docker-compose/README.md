@@ -35,7 +35,42 @@ services:
 
 Note: few previous versions needs to precise the version of the YAML file, but now it's not necessary anymore.
 
+Compose command is also able to build image from a Dockerfile, here is an example to build our node app:
 
+```yml
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  redis:
+    image: redis:alpine
+```
+
+When starting both services, they are able to communicate with each other, the `app` service can reach the `redis` service by using the hostname `redis` and the `redis` service can reach the `app` service by using the hostname `app`.
+By default, the services are isolated from each other, but `docker compose` define a network to allow them to communicate. If needed, more networks can be defined.
+
+Containers communicating though a network does not need to expose ports to the host, they can communicate through the network and container default ports.
+
+Like `docker run`, `docker compose` can also set environment variables, volumes, etc.
+
+```yml
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  redis:
+    image: redis:alpine
+    environment:
+      - MY_CUSTOM_ENV_VAR=everything-you-want-1234 # to apply your configuration
+    volumes:
+      - /docker/host/dir:/data # to apply your persistence strategies
+```
 
 The whole documentation is available [here](https://docs.docker.com/compose/compose-file/).
 
