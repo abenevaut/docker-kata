@@ -2,7 +2,7 @@
 
 ## How Docker works
 
-![](./docker-development-cycle.svg)
+![docker development cycle](./docker-development-cycle.svg)
 
 - **Dockerfile**: A Dockerfile is a script that contains a series of instructions to build a Docker image.
 The instructions include commands to copy files, install software, set environment variables, etc.

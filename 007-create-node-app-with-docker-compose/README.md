@@ -59,11 +59,6 @@ Like `docker run`, `docker compose` can also set environment variables, volumes,
 ```yml
 services:
 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-
   redis:
     image: redis:alpine
     environment:
@@ -72,20 +67,78 @@ services:
       - /docker/host/dir:/data # to apply your persistence strategies
 ```
 
+But, how to build and run services ? Let's start & run many containers:
+
+```shell
+# Start services in terminal
+docker-compose up
+
+# Start services as daemon
+docker-compose up -d
+
+# Stop services
+docker-compose down
+
+# Build services
+docker-compose build
+
+# Rebuild services
+docker-compose up --build
+
+# List services
+docker-compose ps
+
+# List services logs
+docker-compose logs
+````
+
+Now to build & run one container at a time:
+
+```shell
+# Start a service
+docker-compose up -d <service>
+
+# Build a service
+docker-compose build <service>
+
+# Rebuild a service
+docker-compose up -d --build <service>
+
+# List a service logs
+docker-compose logs <service>
+
+# Execute command in container service
+docker-compose exec <service> <command>
+docker-compose exec <service> /bin/bash
+docker-compose exec <service> node -v
+```
+
 The whole documentation is available [here](https://docs.docker.com/compose/compose-file/).
 
 ## Exercise
 
-blablabla...
+Duplicate the `example.docker-compose.yml` file and name it `docker-compose.yml` then update it to run a node app with a redis service.
 
-Re-adapt following command in docker-composer to run app
+The node app is a simple express app that listen on port 3000.
+
+This app communicate with a redis service to store/retrieve data.
+The app call the redis service by its hostname set from `REDIS_HOST` environment variable.
+That should be configurable to be able to switch between the local docker environment and production environment. 
+
+Followings are the steps to achieve this exercise without using `docker compose`:
 
 ```shell
-docker build . -t my-node-app --no-cache
+docker network create my-network --driver bridge
+docker build . -t my-node-app
+docker run -d -p 8000:3000 -e REDIS_HOST=my-redis --network my-network my-node-app
+docker run -d --name my-redis --network my-network redis:alpine
 ```
 
+To stop and remove containers & network
+
 ```shell
-docker run --rm --init -p 3000:3000 my-node-app
+docker rm my-node-app my-redis
+docker network rm my-network
 ```
 
 <details>
@@ -103,8 +156,9 @@ services:
 
   redis:
     image: redis:alpine
+    hostname: app-redis
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to see the app running.
+Visit [http://localhost:8000](http://localhost:8000) to see the app running.
 
 </details>
