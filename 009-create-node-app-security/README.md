@@ -40,9 +40,6 @@ WORKDIR /home/node/app
 
 COPY --from=builder /home/node/app .
 
-RUN chown -R 1000:1000 /home/node/app
-USER 1000
-
 CMD ["node", "/home/node/app/app.js"]
 
 EXPOSE 3000
@@ -56,8 +53,22 @@ This is a common practice to enhance security by avoiding running containers as 
 Here is an example of how to use `USER 1000` in a Dockerfile:
 
 ```Dockerfile
+RUN groupadd --force -g 1000 nodeapp
+RUN useradd -ms /bin/bash --no-user-group -g 1000 -u 1000 nodeapp
+
 RUN chown -R 1000:1000 /home/node/app
 USER 1000
+```
+
+In a `docker-compose.yml` file, you can specify the user and group for a service like this:
+
+```yml
+services:
+  app:
+    image: my-node-app
+    user: "1000:1000" # "UID:GID"
+    group_add:
+      - "1000"
 ```
 
 By inheritance, the user `node` is already created in the `node` image, so you can use it directly.
