@@ -1,4 +1,4 @@
-# Docker kata
+![Docker kata banner](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/.github/github-docker-kata.png)
 
 Get started with Docker through exercises.
 
