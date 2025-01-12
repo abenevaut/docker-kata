@@ -1,8 +1,9 @@
 # Host a .Net app with Docker
 
-This exercise is designed to create our first Dockerfile and then our first image to run a dotnet app as a service accessible from the host.
+This exercise is designed to create our first Dockerfile and then our first image to run a dotnet app as a service accessible from the host with Visual Studio.
 
 ## Subject
+
 
 
 ![Add dockerfile to project](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/006-create-web-api/docs/add-dockerfile.png)
@@ -114,7 +115,7 @@ launchSetting.json
 
 ## Exercise
 
-blabla
+Open Visual Studio and create a new project add apply this document to it to generate a Dockerfile and run the app in a container.
 
 <details>
   <summary>Solution</summary>
