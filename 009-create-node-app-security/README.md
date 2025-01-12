@@ -118,7 +118,9 @@ services:
 
 ## Exercise
 
-Run the container as the `node` user. Multi-stage builds are optional for this exercise.
+Duplicate and rename `example.Dockerfile` to `Dockerfile`.
+Edit the `Dockerfile` to run the container as the `node` user.
+Multi-stage builds are optional for this exercise.
 
 <details>
   <summary>Solution</summary>
