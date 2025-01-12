@@ -92,7 +92,7 @@ In this example:
 - `--cpus="1.0"` limits the container to use at most one CPU
 - `--memory="512m"` limits the container to use at most 512 MB of memory
 
-You can also specify resource limits in a docker-compose.yml file:
+You can also specify resource limits in a `docker-compose.yml` file:
 
 ```yaml
 services:
@@ -107,7 +107,7 @@ services:
 
 ## Exercise
 
-execute container as node user
+Execute container as Node user. You do not need to use multi-stage builds, but you can use it if you want.
 
 <details>
   <summary>Solution</summary>
