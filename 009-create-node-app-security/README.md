@@ -1,4 +1,4 @@
-# SQL Server Service
+# Node.js App Security
 
 This exercise will lead to set up correctly the user and rights to run the container. 
 
@@ -20,7 +20,7 @@ We are using `node:20-slim`, which is a good choice rather than `node:20`, which
 ### Use multi-stage builds
 
 To reduce the size of the final image and remove unnecessary build dependencies.
-This way to build the image will help you to remove dependencies and files only needed for the build.
+This build method helps remove dependencies and files only required during the build process.
 
 ```Dockerfile
 # First stage: Build environment
@@ -71,7 +71,7 @@ services:
       - "1000"
 ```
 
-By inheritance, the user `node` is already created in the `node` image, so you can use it directly.
+The `node` image already includes a `node` user by default, so you can use it directly without creating a new user.
 
 ```Dockerfile
 RUN chown -R node:node /home/node/app
@@ -89,7 +89,7 @@ docker run -d -p 8000:3000 -e REDIS_HOST=my-redis --network my-network my-node-a
 
 In this example:
 
-- `-e REDIS_HOST=my-redis` sets the `REDIS_HOST` environment variable to `my-redis`
+- `-e REDIS_HOST=my-redis` assigns the value `my-redis` to the `REDIS_HOST` environment variable
 
 ### Limit resource usage
 
@@ -103,7 +103,7 @@ In this example:
 - `--cpus="1.0"` limits the container to use at most one CPU
 - `--memory="512m"` limits the container to use at most 512 MB of memory
 
-You can also specify resource limits in a `docker-compose.yml` file:
+Resource limits can also be specified in a `docker-compose.yml` file as follows:
 
 ```yaml
 services:
@@ -118,7 +118,7 @@ services:
 
 ## Exercise
 
-Execute container as Node user. You do not need to use multi-stage builds, but you can use it if you want.
+Run the container as the `node` user. Multi-stage builds are optional for this exercise.
 
 <details>
   <summary>Solution</summary>
