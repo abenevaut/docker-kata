@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>_004_web_api_docker_composer</RootNamespace>
+    <RootNamespace>_008_web_api_docker_composer</RootNamespace>
     <UserSecretsId>b13704a2-f9b0-4f56-a12a-a0fb058c0a12</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
