@@ -1,6 +1,6 @@
 # Host a .Net app with Docker
 
-This exercise is designed to create our first Dockerfile and then our first image to run an existing  Visual Studio dotnet app as a service accessible from the host.
+This exercise is designed to help you create your first Dockerfile and image to run an existing Visual Studio .NET app as a service accessible from the host.
 
 ## Subject
 
@@ -9,12 +9,12 @@ The example accompanying this course is a simple web API project based on "ASP.N
 
 In your Visual Studio project, create a Dockerfile by right-clicking on the project and selecting "Add" > "Docker Support". 
 
-![Add dockerfile to project](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/006-create-web-api/docs/add-dockerfile.png)
+![Add Dockerfile to project](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/006-create-web-api/docs/add-dockerfile.png)
 
 A setup window will appear to customise the Dockerfile details.
 
 You are able to choose the "target OS", linux or windows and the "Image Distro", the distribution of the image, for example, "Debian" or "Alpine".
-You can also the solution for which the Dockerfile will be created, the project to run in the container and the target framework.
+You can also select the solution for which the Dockerfile will be created, the project to run in the container and the target framework.
 
 ![Follow the setup window to customise Dockerfile details](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/006-create-web-api/docs/add-dockerfile-details.png)
 
@@ -56,7 +56,7 @@ COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "006-web-api.dll"]
 ```
 
-The generated Dockerfile come also with a `.dockerignore` file to exclude unnecessary files from the image.
+The generated Dockerfile also comes with a `.dockerignore` file to exclude unnecessary files from the image.
 
 ```
 **/.classpath
@@ -91,7 +91,7 @@ README.md
 !.git/refs/heads/**
 ```
 
-The last action that did is to add settings to run Docker in `launchSetting.json` file.
+And the `launchSettings.json` file is automatically updated to run the app in a container.
 
 ```json
 {
@@ -124,7 +124,7 @@ Hit it to run the app in a container.
 ![Hit the Docker start up button to run docker container](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/006-create-web-api/docs/run-docker.png)
 
 If everything is ok, the app will be running in a container and a new edge instance will open to show the app.
-The chosen template expose a swagger interface to describe the API and expose the API endpoints.
+The chosen template exposes a Swagger interface to describe the API and its endpoints.
 
 ![Swagger describe our API](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/006-create-web-api/docs/swagger-run.png)
 
@@ -135,7 +135,7 @@ Open Visual Studio, open an existing project OR create a new project then apply 
 <details>
   <summary>Solution</summary>
 
-The is not much to do to run the app in a container.
+There isn't much to do to run the app in a container.
 
 Following, which project template to choose to create a new project in Visual Studio.
 
