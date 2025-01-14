@@ -1,4 +1,4 @@
-namespace _008_web_api_docker_composer
+namespace WebApplication1
 {
     public class WeatherForecast
     {

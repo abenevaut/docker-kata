@@ -6,6 +6,8 @@ This exercise is designed to create our first `docker-compose.yml` (or `compose.
 
 blabla
 
+https://learn.microsoft.com/en-us/visualstudio/containers/tutorial-multicontainer?view=vs-2022
+
 
 ## Exercise
 
