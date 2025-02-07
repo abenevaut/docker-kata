@@ -26,6 +26,8 @@ cl /Fe:hello.exe main.c
 
 Docker provides a way to create isolated environments that can be used to compile software the same way on different machines.
 
+The only thing we need to do is to mount the source code to the container, execute the compiler inside the container and get the compiled binary back to the host.
+
 ## Exercise
 
 Here we go, you have to compile the "hello world" program with a Docker container.
