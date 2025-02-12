@@ -26,6 +26,12 @@ cl /Fe:hello.exe main.c
 
 Docker provides a way to create isolated environments that can be used to compile software the same way on different machines.
 
+To re-use existing services, you can use images from the Docker Hub, like we will do with the GCC image.
+Images are pre-built packages that contain everything needed to run a service, including the application code, dependencies, and configuration.
+
+So the GCC image is a pre-built package that contains the GCC compiler and all its dependencies.
+You will be able to execute GCC commands inside a container using this image by command line with docker.
+
 The only thing we need to do is to mount the source code to the container, execute the compiler inside the container and get the compiled binary back to the host.
 
 ## Exercise
