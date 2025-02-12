@@ -6,6 +6,18 @@ This exercise is designed to mount a volume to persist data from a Docker servic
 
 Azure sql edge is a cloud-based relational database service.
 
+When using Containers, you have to keep in mind that the data is not persisted by default.
+To do so, you can use volumes or bind mounts.
+
+Volumes are stored in a part of the host filesystem which is managed by Docker and accessible only from within Docker.
+
+To be able to persist data from a service in a directory from the host, you can use bind mounts.
+Like this all data in the directory is available to the container and your host. 
+
+To create a volume, you can use the `docker volume create <volume name>` command.
+This will create your volume in the Docker environment.
+To verify that the volume has been created, you can use the `docker volume ls` command.
+
 ## Exercise
 
 Pull and run the Azure sql edge image twice as a background service.

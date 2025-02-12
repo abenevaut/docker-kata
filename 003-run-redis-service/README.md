@@ -9,6 +9,15 @@ Docker provides a way to create isolated environments that can be used to run se
 Redis is a popular in-memory data structure store, used as a database, cache, and message broker.
 We will focus the cache usage of Redis, as a key-value store.
 
+To re-use existing services, you can use images from the Docker Hub, like we will do with the Redis image.
+Images are pre-built packages that contain everything needed to run a service, including the application code, dependencies, and configuration.
+
+When you run a container from an image, you create an instance of the service defined by the image.
+This instance is isolated from other containers and can be accessed through ports that you expose on the host machine.
+
+To get an image, you can use the `docker pull` command.
+To run a container from an image, you can use the `docker run` command.
+
 ## Exercise
 
 Here we go, you have to run and connect to your own Redis server using Docker.
