@@ -24,14 +24,24 @@ On Windows, the CL compiler is commonly used to compile C programs.
 cl /Fe:hello.exe main.c
 ```
 
-Docker provides a way to create isolated environments that can be used to compile software the same way on different machines.
+Docker provides a way to create isolated environments that can be used to compile software the same way on different machines and operating systems.
 
 ## Exercise
 
 Here we go, you have to compile the "hello world" program with a Docker container.
 
-I encourage you to use the GCC image from Docker Hub.
+To re-use existing services, you can use images from the Docker Hub.
+Images are pre-built packages that contain everything needed to run a service, including the application code, dependencies, and configuration.
+
+To successfully compile the C program, I encourage you to use the GCC image from Docker Hub.
 - [GCC image](https://hub.docker.com/_/gcc)
+
+So the GCC image is a pre-built package that contains the GCC compiler and all its dependencies.
+You will be able to execute GCC commands inside a container using this image by command line with docker.
+
+The only thing we need to do is to mount the source code to the container.
+Then execute the compiler inside the container on the mounted files.
+And finally, get the compiled binary back to the host.
 
 <details>
   <summary>Solution</summary>
