@@ -1,10 +1,10 @@
-# Host a node app with node image
+# Host a Node app with node image
 
-This exercise is designed to create our first Dockerfile and then our first image to run a node app as a service accessible from the host with [node](https://hub.docker.com/_/node) image.
+This exercise is designed to create our first Dockerfile and then our first image to run a Node app as a service accessible from the host with [node](https://hub.docker.com/_/node) image.
 
 ## Subject
 
-We will use node image to run a node app.
+We will use node image to run a Node app.
 
 Let's read the image description from the [node image doc.](https://hub.docker.com/_/node)
 
@@ -19,8 +19,8 @@ FROM node:20-slim
 
 The image has different tags like `node:20-slim`, `node:20-alpine`, `node:20-buster`, etc.
 
-`node:20-slim` is an example of a tag in a Dockerfile. Tags are used to specify the version of an image to use.
-In this case, node:20-slim refers to the node image with version 20 and the slim variant.
+Tags are used to specify the version of an image to use.
+In this case, `node:20-slim` refers to the Node image with version 20 and the slim variant.
 Tags help to identify specific versions of images and are useful for ensuring consistency and reproducibility in Docker builds.
 
 The variant `slim` is a smaller version of the image with fewer dependencies, making it more lightweight and suitable for production use.
@@ -73,7 +73,7 @@ In this directory, you will find an `app.js` file, a `package.json` file and a `
 This app is already working, you should `npm install` to install dependencies and `node app.js` to run the app.
 You can visit [http://localhost:3000](http://localhost:3000) to see the app running.
 
-Constitute a Dockerfile to build an image to run the node app. A file `example.Dockerfile` is provided to help you.
+Constitute a Dockerfile to build an image to run the Node app. A file `example.Dockerfile` is provided to help you.
 - Use `node:20-slim` image as base image for your Dockerfile
 - Copy `app.js`, `package.json` & `package-lock.json` to the image
 - Run the `app.js` with node

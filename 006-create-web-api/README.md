@@ -4,7 +4,7 @@ This exercise is designed to help you create your first Dockerfile and image to 
 
 ## Subject
 
-First of all, remember to update Visual Studio to the latest version.
+First, update Visual Studio to the latest version.
 The example accompanying this course is a simple web API project based on "ASP.NET Core Web Api" template (with .NET 8.0).
 
 In your Visual Studio project, create a Dockerfile by right-clicking on the project and selecting "Add" > "Docker Support". 
@@ -13,7 +13,7 @@ In your Visual Studio project, create a Dockerfile by right-clicking on the proj
 
 A setup window will appear to customise the Dockerfile details.
 
-You are able to choose the "target OS", linux or windows and the "Image Distro", the distribution of the image, for example, "Debian" or "Alpine".
+You can choose the "target OS", linux or windows and the "Image Distro", the distribution of the image, for example, "Debian" or "Alpine".
 You can also select the solution for which the Dockerfile will be created, the project to run in the container and the target framework.
 
 ![Follow the setup window to customise Dockerfile details](https://raw.githubusercontent.com/abenevaut/docker-kata/refs/heads/master/006-create-web-api/docs/add-dockerfile-details.png)

@@ -1,13 +1,13 @@
 # SQL Server Service
 
-This exercise is designed to mount a volume to persist data from a Docker service in local host with [the azure sql edge](https://hub.docker.com/r/microsoft/azure-sql-edge) image. 
+This exercise is designed to mount a volume to persist data from a Docker service in local host with [Azure SQL Edge](https://hub.docker.com/r/microsoft/azure-sql-edge) image. 
 
 ## Subject
 
 As we have already seen (twice), docker provides a way to create isolated environments that can be used to run services the same way on different machines.
 
-On Docker Hub, you can find an infinity of images that can be used to run services.
-Azure sql edge is one of them and a cloud-based relational database service.
+On Docker Hub, you can find a multitude of images that can be used to run services.
+Azure SQL Edge is one of them and a cloud-based relational database service.
 
 When using Containers, you have to keep in mind that the data is not persisted by default.
 To do so, you can use volumes or mount directories from the host as volume.
@@ -22,12 +22,12 @@ To mount a directory from the host, you can use the `-v` option in the `docker r
 
 ## Exercise
 
-Pull and run the Azure sql edge image twice as a background service.
+Pull and run the Azure SQL Edge image twice as a background service.
 
 - The first service should persist data in a docker volume and run service on port 1433.
 - The second service should persist data in a mounted directory from the host and run service on port 1434.
 
-Inspired from the [docker run doc.](https://docs.docker.com/reference/cli/docker/container/run/), the [azure sql edge image doc.](https://hub.docker.com/r/microsoft/azure-sql-edge) and the [starter-kit](../000-starter-kit/README.md) if needed.
+Inspired from the [docker run doc.](https://docs.docker.com/reference/cli/docker/container/run/), [Azure SQL Edge image doc.](https://hub.docker.com/r/microsoft/azure-sql-edge) and the [starter-kit](../000-starter-kit/README.md) if needed.
 
 <details>
   <summary>Solution</summary>

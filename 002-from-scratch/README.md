@@ -30,7 +30,7 @@ gcc -o hello main.c -static
 ```
 
 Docker provides a way to create isolated environments for running applications, including compiling and running software.
-As one of these ways is to use the `FROM scratch` image, which is an empty image (without operating system) that allows you to build minimal Docker able to run a statically compiled executable.
+One way is to use the `FROM scratch` image, which is an empty image (without operating system) that allows you to build minimal Docker able to run a statically compiled executable.
 
 ## Exercise
 
