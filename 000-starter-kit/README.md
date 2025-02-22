@@ -26,7 +26,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 - [**GitHub**](https://docs.github.com/fr/packages/working-with-a-github-packages-registry/working-with-the-docker-registry) & [**Azure**](https://azure.microsoft.com/fr-fr/products/container-registry/): have their own Docker image registries.
 
-- **Container**: A container is an executable instance of a Docker image. It encapsulates the application and its runtime environment. Multiple containers can be launched from the same image, running independently of each other. Containers share the same operating system kernel but can be restricted in terms of CPU, memory, and other resources. In other words, containers are work like virtual machines.
+- **Container**: A container is an executable instance of a Docker image. It encapsulates the application and its runtime environment. Multiple containers can be launched from the same image, running independently of each other. Containers share the same operating system kernel but can be restricted in terms of CPU, memory, and other resources. In other words, containers are work similarly virtual machines.
 
 - **Volume**: A volume is a mechanism to persist and share data between containers and the host system. Unlike data in the layers of a Docker image, data in a volume is not deleted when the container is destroyed. Volumes are useful for backup, restore, and data sharing.
 

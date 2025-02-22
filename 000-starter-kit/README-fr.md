@@ -4,7 +4,7 @@
 
 ![docker cycle de développement](./docker-development-cycle.svg)
 
-- **Dockerfile**: Un fichier Dockerfile est un script qui contient une série d'instructions pour construire une image Docker. Les instructions incluent des commandes pour copier des fichiers, installer des logiciels, définir des variables d'environnement, etc. Les fichiers Dockerfiles sont utilisés pour automatiser le processus de construction d'images Docker.
+- **Dockerfile**: Un fichier Dockerfile est un script qui contient une série d'instructions pour construire une image Docker. Les instructions incluent des commandes pour copier des fichiers, installer des logiciels, définir des variables d'environnement, etc. Les fichiers Dockerfile sont utilisés pour automatiser le processus de construction d'images Docker.
 
 - **Image Docker**: Une image Docker est un modèle immuable qui contient le code source, les bibliothèques, les dépendances, les outils et autres fichiers nécessaires pour exécuter une application.
 Les images sont utilisées pour créer des conteneurs. Pour décrire une image, on utilise un fichier Dockerfile qui spécifie comment construire l'image.
