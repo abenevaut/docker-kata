@@ -1,6 +1,6 @@
 ﻿# Hello, World!
 
-This exercise is designed to introduce the use of binary software though Docker.
+This exercise is designed to introduce the use of binary software through Docker.
 
 ## Subject
 
@@ -32,7 +32,7 @@ Images are pre-built packages that contain everything needed to run a service, i
 So the GCC image is a pre-built package that contains the GCC compiler and all its dependencies.
 You will be able to execute GCC commands inside a container using this image by command line with docker.
 
-The only thing we need to do is to mount the source code to the container, execute the compiler inside the container and get the compiled binary back to the host.
+The only thing needed is to mount the source code to the container, execute the compiler inside the container and get the compiled binary back to the host.
 
 ## Exercise
 
