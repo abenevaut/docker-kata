@@ -6,8 +6,8 @@ Get started with Docker through exercises.
 
 - understand the basics of Docker for local development
 - understand and practice image and container management
-	- execute binaries
-	- run services
+  - execute binaries
+  - run services
 - learn and practice basic volume and network management
 
 ## Prerequisite
