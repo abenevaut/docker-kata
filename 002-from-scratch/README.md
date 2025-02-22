@@ -13,12 +13,13 @@ When you compile a C program, the compiler generates an executable file that can
 
 The compilation is generally done as dynamically linked, which means that the executable depends on shared libraries installed on the host system.
 This allows the executable to be smaller and share common code with other programs.
-However, the generated executable may not work on other machines due to differences in the operating system or library dependencies.
 
 The following command compiles the `main.c` file into an executable named `hello`, all library dependencies are dynamically linked:
 ```shell
 gcc -o hello main.c
 ```
+
+However, the generated executable may not work on other machines due to differences in the operating system or library dependencies.
 
 To ensure that the executable runs consistently across different environments, you can compile it statically.
 Static linking includes all the necessary library code within the executable, making it larger but self-contained.
@@ -29,7 +30,7 @@ gcc -o hello main.c -static
 ```
 
 Docker provides a way to create isolated environments for running applications, including compiling and running software.
-As one of these ways is to use the `FROM scratch` image, which is an empty image (without operating system) that allows you to build minimal Docker images "FROM scratch".
+As one of these ways is to use the `FROM scratch` image, which is an empty image (without operating system) that allows you to build minimal Docker able to run a statically compiled executable.
 
 ## Exercise
 

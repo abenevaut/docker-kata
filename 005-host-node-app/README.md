@@ -53,6 +53,9 @@ In our example, we will use an `app` directory in the `/home/node` directory as 
 WORKDIR /home/node/app
 ```
 
+Note that we already saw the `WORKDIR` instruction in command line when using gcc image to compile a C program (`docker run --rm <blahblah> -w /usr/src/myapp gcc:latest gcc <blahblah>`).
+So remember we can override the working directory with `-w` option in `docker run` command.
+
 Then we will be able to copy projects file to the image with the `COPY` instruction.
 The `COPY` instruction copies files from the host to the image.
 It takes two arguments: the source path on the host and the destination path in the image.
